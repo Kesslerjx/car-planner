@@ -6,7 +6,7 @@ function Calculator({ title, inputs, result }) {
       <div className="calculator">
         <p>{title}</p>
         {inputs.map(input => input)}
-        <div>
+        <div className='result-wrapper'>
             <p>{`$${result}`}</p>
         </div>
       </div>

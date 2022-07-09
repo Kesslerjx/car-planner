@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Calculator from "./Calculator";
+import MaxPayment from "./calculators/MaxPayment";
 import { getMaxPayment } from "../modules/calculator-functions";
 
 function Planner({results, updateResult}) {
@@ -34,41 +35,10 @@ function Planner({results, updateResult}) {
 
     return (
       <div>
-        <Calculator 
-            title="Max Payment"
-            inputs={[
-                <input 
-                    value={values.maxCost}
-                    onChange={(e) => inputChanged(e)}
-                    name='maxCost' 
-                    type='number'
-                ></input>,
-                <input 
-                    value={values.gasCost}
-                    onChange={(e) => inputChanged(e)}
-                    name='gasCost'
-                    type='number'
-                ></input>,
-                <input 
-                    value={values.insCost}
-                    onChange={(e) => inputChanged(e)}
-                    name='insCost'
-                    type='number'
-                ></input>,
-                <input 
-                    value={values.manCost}
-                    onChange={(e) => inputChanged(e)}
-                    name='manCost'
-                    type='number'
-                ></input>,
-                <input 
-                    value={values.othCost}
-                    onChange={(e) => inputChanged(e)}
-                    name='othCost'
-                    type='number'
-                ></input>,
-            ]}
+        <MaxPayment 
+            values={[values.maxCost, values.gasCost, values.insCost, values.manCost, values.othCost]}
             result={results.maxPayment}
+            inputChanged= {inputChanged}
         />
       </div>
     );

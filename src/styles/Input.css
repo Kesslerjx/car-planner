@@ -1,0 +1,15 @@
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.input-wrapper > input {
+    padding: 2px;
+    padding-left: 5px;
+}
+
+.input-wrapper > p {
+    font-size: 0.9rem;
+}
