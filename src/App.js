@@ -27,9 +27,11 @@ function App() {
     <div>
       <header>
         <p>Car Planner</p>
-        <button onClick={() => setComponent('Home')}>Home</button>
-        <button onClick={() => setComponent('Planner')}>Planner</button>
-        <button onClick={() => setComponent('Vehicles')}>Vehicles</button>
+        <div>
+          <button className='header-button' onClick={() => setComponent('Home')}>Home</button>
+          <button className='header-button' onClick={() => setComponent('Planner')}>Planner</button>
+          <button className='header-button' onClick={() => setComponent('Vehicles')}>Vehicles</button>
+        </div>
       </header>
       {getComponent()}
     </div>
