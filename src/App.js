@@ -1,8 +1,8 @@
 import './styles/App.css';
 import React, { useEffect, useState } from 'react';
-import Planner from './components/Planner';
-import Vehicles from './components/Vehicles';
-import Home from './components/Home';
+import Planner                        from './components/Planner';
+import Vehicles                       from './components/Vehicles';
+import Home                           from './components/Home';
 
 function App() {
 

@@ -7,7 +7,7 @@ function Calculator({ title, inputs, result }) {
         <p>{title}</p>
         {inputs.map(input => input)}
         <div className='result-wrapper'>
-            <p>{`$${result}`}</p>
+            <p>{`$${Math.round(result * 100) / 100}`}</p>
         </div>
       </div>
     );

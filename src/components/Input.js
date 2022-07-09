@@ -1,6 +1,6 @@
 import '../styles/Input.css'
 
-function Input({label, value, name, onChange}) {
+function Input({label, value, name, onChange, disabled=false}) {
     return (
         <div className="input-wrapper">
         <p>{label}</p>
@@ -9,6 +9,7 @@ function Input({label, value, name, onChange}) {
             onChange={(e) => onChange(e)}
             name={name}
             type='number'
+            disabled={disabled}
         ></input>
     </div>
     )

@@ -1,12 +1,12 @@
 import Calculator from "../Calculator";
-import Input from "../Input";
+import Input      from "../Input";
 
 function MaxPayment({ values, result, inputChanged }) {
     return (
         <Calculator 
             title="Max Payment"
             inputs={[
-                <Input 
+                <Input
                     label='Max Cost'
                     value={values.maxCost}
                     name ='maxCost'
