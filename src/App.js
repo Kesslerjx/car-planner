@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import React, { useEffect, useState } from 'react';
 import Planner from './components/Planner';
 import Vehicles from './components/Vehicles';
@@ -7,13 +7,26 @@ import Home from './components/Home';
 function App() {
 
   const [component, setComponent] = useState('Home');
+  const [results, setResults]     = useState({
+    maxPayment: 0,
+    totalPrice: 0,
+    grossPrice: 0,
+    reqVehicle: 0
+  })
+
+  const updateResult = (name, value) => {
+    setResults(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
   
   const getComponent = () => {
     switch(component) {
       default:
         return <Home />;
       case 'Planner':
-        return <Planner />;
+        return <Planner results={results} updateResult={updateResult}/>;
       case 'Vehicles':
         return <Vehicles />;
     }
