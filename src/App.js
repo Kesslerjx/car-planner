@@ -33,7 +33,9 @@ function App() {
           <button className='header-button' onClick={() => setComponent('Vehicles')}>Vehicles</button>
         </div>
       </header>
-      {getComponent()}
+      <main>
+        {getComponent()}
+      </main>
     </div>
   );
 }

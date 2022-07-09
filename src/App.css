@@ -5,6 +5,7 @@ header {
   align-items: center;
   padding: 20px;
   gap: 15px;
+  border-bottom: solid 1px;
 }
 
 header > p {
@@ -29,4 +30,8 @@ header > div {
 
 .header-button:hover {
   font-weight: bold;
+}
+
+main {
+  padding: 50px;
 }
