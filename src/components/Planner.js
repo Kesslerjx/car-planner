@@ -7,6 +7,7 @@ import {
 }                             from "../modules/calculator-functions";
 import MaxPayment              from "./calculators/MaxPayment";
 import TotalPrice              from "./calculators/TotalPrice";
+import GrossPrice from './calculators/GrossPrice';
 
 function Planner({results, updateResult}) {
 
@@ -16,10 +17,13 @@ function Planner({results, updateResult}) {
         insCost: 0,
         manCost: 0,
         othCost: 0,
-        salesTax: 0,
+        tax: 0,
         fees: 0,
         rate: 0,
-        length: 0
+        length: 0,
+        downPayment: 0,
+        tradeIn: 0,
+        amountOwed: 0
     });
 
     const inputChanged = (e) => {
@@ -52,6 +56,19 @@ function Planner({results, updateResult}) {
         // eslint-disable-next-line
     }, [results.maxPayment, values.rate, values.length])
 
+    useEffect(()=> {
+        updateResult('grossPrice', getGrossPrice(
+            results.totalPrice, 
+            values.tax, 
+            values.fees,
+            values.downPayment,
+            values.tradeIn,
+            values.amountOwed 
+        ))
+
+        // eslint-disable-next-line
+    }, [results.totalPrice, values.tax,  values.fees, values.downPayment, values.tradeIn, values.amountOwed])
+
     return (
       <div className="planner">
         <MaxPayment 
@@ -73,6 +90,19 @@ function Planner({results, updateResult}) {
                 length: values.length
             }}
             result={results.totalPrice}
+            inputChanged= {inputChanged}
+        />
+
+        <GrossPrice 
+            values={{
+                totalPrice: results.totalPrice, 
+                tax: values.tax,
+                fees: values.fees, 
+                downPayment: values.downPayment, 
+                tradeIn: values.tradeIn,  
+                amountOwed: values.amountOwed
+            }}
+            result={results.grossPrice}
             inputChanged= {inputChanged}
         />
       </div>

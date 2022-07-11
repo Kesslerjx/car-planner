@@ -4,7 +4,7 @@ import Input      from "../Input";
 function TotalPrice({ values, result, inputChanged }) {
     return (
         <Calculator 
-            title="Total Price"
+            title="Loan Amount"
             inputs={[
                 <Input 
                     label='Max Payment'
