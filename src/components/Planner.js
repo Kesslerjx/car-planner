@@ -3,11 +3,13 @@ import { useEffect } from "react";
 import { 
     getMaxPayment,
     getTotalPrice,
-    getGrossPrice 
-}                             from "../modules/calculator-functions";
-import MaxPayment              from "./calculators/MaxPayment";
-import TotalPrice              from "./calculators/TotalPrice";
-import GrossPrice from './calculators/GrossPrice';
+    getGrossPrice,
+    getRequiredMPG 
+}                   from "../modules/calculator-functions";
+import MaxPayment    from "./calculators/MaxPayment";
+import TotalPrice    from "./calculators/TotalPrice";
+import GrossPrice    from './calculators/GrossPrice';
+import RequiredMPG   from './calculators/RequiredMPG';
 
 function Planner({ state, results, updateResult}) {
 
@@ -56,6 +58,16 @@ function Planner({ state, results, updateResult}) {
         // eslint-disable-next-line
     }, [results.totalPrice, values.tax,  values.fees, values.downPayment, values.tradeIn, values.amountOwed])
 
+    useEffect(()=> {
+        updateResult('reqVehicle', getRequiredMPG(
+            values.gasCost,
+            values.gallonCost,
+            values.monthlyMiles
+        ))
+
+        // eslint-disable-next-line
+    }, [values.gasCost, values.gallonCost, values.monthlyMiles])
+
     return (
       <div className="planner">
         <MaxPayment 
@@ -92,6 +104,17 @@ function Planner({ state, results, updateResult}) {
             result={results.grossPrice}
             inputChanged= {inputChanged}
         />
+
+        <RequiredMPG 
+            values={{
+                gasCost: values.gasCost,
+                gallonCost: values.gallonCost,
+                monthlyMiles: values.monthlyMiles
+            }}
+            result={results.reqVehicle}
+            inputChanged= {inputChanged}
+        />
+        
       </div>
     );
   }

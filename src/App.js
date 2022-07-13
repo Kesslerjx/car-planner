@@ -25,7 +25,9 @@ function App() {
     length: 0,
     downPayment: 0,
     tradeIn: 0,
-    amountOwed: 0
+    amountOwed: 0,
+    gallonCost: 0,
+    monthlyMiles: 0
   });
 
   const updateResult = (name, value) => {

@@ -30,3 +30,10 @@ export function getGrossPrice(totalPrice, tax, fees, down, trade, owed) {
     const r = b - Number(fees) + Number(down) + e;
     return isNaN(r) ? 0 : r;
 }
+
+//Gets the required vehicle MPG based on what the user wants to spend on gas and the amount of miles they drive per month
+export function getRequiredMPG(gasCost, gallonCost, monthlyMiles) {
+    const g = Number(gasCost) / Number(gallonCost);
+    const r = Number(monthlyMiles) / g;
+    return isNaN(r) ? 0 : r;
+}
