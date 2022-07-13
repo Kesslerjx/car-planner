@@ -2,7 +2,6 @@ import './styles/App.css';
 import React, { useEffect, useState } from 'react';
 import Planner                        from './components/Planner';
 import Vehicles                       from './components/Vehicles';
-import Home                           from './components/Home';
 
 function App() {
 
@@ -40,8 +39,6 @@ function App() {
   const getComponent = () => {
     switch(component) {
       default:
-        return <Home />;
-      case 'Planner':
         return <Planner state={[values, setValues]} results={results} updateResult={updateResult}/>;
       case 'Vehicles':
         return <Vehicles />;
@@ -57,7 +54,6 @@ function App() {
       <header>
         <p>Car Planner</p>
         <div>
-          <button className='header-button' onClick={() => setComponent('Home')}>Home</button>
           <button className='header-button' onClick={() => setComponent('Planner')}>Planner</button>
           <button className='header-button' onClick={() => setComponent('Vehicles')}>Vehicles</button>
         </div>
