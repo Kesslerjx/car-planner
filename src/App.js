@@ -13,6 +13,20 @@ function App() {
     grossPrice: 0,
     reqVehicle: 0
   })
+  const [values, setValues] = useState({
+    maxCost: 0,
+    gasCost: 0,
+    insCost: 0,
+    manCost: 0,
+    othCost: 0,
+    tax: 0,
+    fees: 0,
+    rate: 0,
+    length: 0,
+    downPayment: 0,
+    tradeIn: 0,
+    amountOwed: 0
+  });
 
   const updateResult = (name, value) => {
     setResults(prevState => ({
@@ -26,7 +40,7 @@ function App() {
       default:
         return <Home />;
       case 'Planner':
-        return <Planner results={results} updateResult={updateResult}/>;
+        return <Planner state={[values, setValues]} results={results} updateResult={updateResult}/>;
       case 'Vehicles':
         return <Vehicles />;
     }

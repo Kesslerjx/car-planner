@@ -1,5 +1,5 @@
 import '../styles/Planner.css'
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { 
     getMaxPayment,
     getTotalPrice,
@@ -9,22 +9,9 @@ import MaxPayment              from "./calculators/MaxPayment";
 import TotalPrice              from "./calculators/TotalPrice";
 import GrossPrice from './calculators/GrossPrice';
 
-function Planner({results, updateResult}) {
+function Planner({ state, results, updateResult}) {
 
-    const [values, setValues] = useState({
-        maxCost: 0,
-        gasCost: 0,
-        insCost: 0,
-        manCost: 0,
-        othCost: 0,
-        tax: 0,
-        fees: 0,
-        rate: 0,
-        length: 0,
-        downPayment: 0,
-        tradeIn: 0,
-        amountOwed: 0
-    });
+    const [values, setValues] = state;
 
     const inputChanged = (e) => {
         const { name, value } = e.target;
