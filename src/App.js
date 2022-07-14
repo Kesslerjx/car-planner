@@ -2,10 +2,10 @@ import './styles/App.css';
 import React, { useEffect, useState } from 'react';
 import Planner                        from './components/Planner';
 import Vehicles                       from './components/Vehicles';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 function App() {
 
-  const [component, setComponent] = useState('Home');
   const [results, setResults]     = useState({
     maxPayment: 0,
     totalPrice: 0,
@@ -35,33 +35,25 @@ function App() {
       [name]: value
     }))
   }
-  
-  const getComponent = () => {
-    switch(component) {
-      default:
-        return <Planner state={[values, setValues]} results={results} updateResult={updateResult}/>;
-      case 'Vehicles':
-        return <Vehicles />;
-    }
-  }
-
-  useEffect(() => {
-    document.title = component;
-  }, [component])
 
   return (
-    <div>
-      <header>
-        <p>Car Planner</p>
-        <div>
-          <button className='header-button' onClick={() => setComponent('Planner')}>Planner</button>
-          <button className='header-button' onClick={() => setComponent('Vehicles')}>Vehicles</button>
-        </div>
-      </header>
-      <main>
-        {getComponent()}
-      </main>
-    </div>
+    <Router>
+      <div>
+        <header>
+          <p>Car Planner</p>
+          <div>
+            <Link className='header-button' to='/'>Planner</Link>
+            <Link className='header-button' to='/vehicles'>Vehicles</Link>
+          </div>
+        </header>
+        <main>
+          <Routes> 
+            <Route path='/' element={<Planner state={[values, setValues]} results={results} updateResult={updateResult}/>} />
+            <Route path='/vehicles' element={<Vehicles />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 

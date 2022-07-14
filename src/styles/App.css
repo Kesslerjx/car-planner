@@ -22,10 +22,14 @@ header > div {
 }
 
 .header-button {
-  border: none;
   width: 75px;
   background: none;
   font-size: 1rem;
+  text-decoration: none;
+}
+
+.header-button:visited {
+  color: black;
 }
 
 .header-button:hover {
