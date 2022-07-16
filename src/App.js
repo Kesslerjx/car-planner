@@ -12,6 +12,7 @@ function App() {
     grossPrice: 0,
     reqVehicle: 0
   })
+  
   const [values, setValues] = useState({
     maxCost: 0,
     gasCost: 0,
