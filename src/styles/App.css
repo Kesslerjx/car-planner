@@ -13,9 +13,11 @@ header > p {
 }
 
 /* Center the header content when screen is smaller */ 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:600px) {
   header {
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 }
 
