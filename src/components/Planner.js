@@ -95,51 +95,52 @@ function Planner({ state, results, updateResult}) {
                 since gas cost will take up a large portion of your total cost.
             </p>
         </div>
-        <MaxPayment 
-            values={{
-                maxCost: values.maxCost, 
-                gasCost: values.gasCost, 
-                insCost: values.insCost, 
-                manCost: values.manCost, 
-                othCost: values.othCost
-            }}
-            result={results.maxPayment}
-            inputChanged= {inputChanged}
-        /> 
-        
-        <TotalPrice 
-            values={{
-                maxPayment: results.maxPayment, 
-                rate: values.rate, 
-                length: values.length
-            }}
-            result={results.totalPrice}
-            inputChanged= {inputChanged}
-        />
+        <div className='calculators'>
+            <MaxPayment 
+                values={{
+                    maxCost: values.maxCost, 
+                    gasCost: values.gasCost, 
+                    insCost: values.insCost, 
+                    manCost: values.manCost, 
+                    othCost: values.othCost
+                }}
+                result={results.maxPayment}
+                inputChanged= {inputChanged}
+            /> 
+            
+            <TotalPrice 
+                values={{
+                    maxPayment: results.maxPayment, 
+                    rate: values.rate, 
+                    length: values.length
+                }}
+                result={results.totalPrice}
+                inputChanged= {inputChanged}
+            />
 
-        <GrossPrice 
-            values={{
-                totalPrice: results.totalPrice, 
-                tax: values.tax,
-                fees: values.fees, 
-                downPayment: values.downPayment, 
-                tradeIn: values.tradeIn,  
-                amountOwed: values.amountOwed
-            }}
-            result={results.grossPrice}
-            inputChanged= {inputChanged}
-        />
+            <GrossPrice 
+                values={{
+                    totalPrice: results.totalPrice, 
+                    tax: values.tax,
+                    fees: values.fees, 
+                    downPayment: values.downPayment, 
+                    tradeIn: values.tradeIn,  
+                    amountOwed: values.amountOwed
+                }}
+                result={results.grossPrice}
+                inputChanged= {inputChanged}
+            />
 
-        <RequiredMPG 
-            values={{
-                gasCost: values.gasCost,
-                gallonCost: values.gallonCost,
-                monthlyMiles: values.monthlyMiles
-            }}
-            result={results.reqVehicle}
-            inputChanged= {inputChanged}
-        />
-        
+            <RequiredMPG 
+                values={{
+                    gasCost: values.gasCost,
+                    gallonCost: values.gallonCost,
+                    monthlyMiles: values.monthlyMiles
+                }}
+                result={results.reqVehicle}
+                inputChanged= {inputChanged}
+            />
+        </div>
       </div>
     );
   }

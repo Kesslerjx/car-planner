@@ -1,31 +1,37 @@
 header {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  gap: 15px;
   border-bottom: solid 1px;
+  padding: 10px 40px;
+  flex-wrap: wrap;
 }
 
 header > p {
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 0.1rem;
   font-weight: bold;
+}
+
+/* Center the header content when screen is smaller */ 
+@media only screen and (max-width:500px) {
+  header {
+    justify-content: center;
+  }
 }
 
 header > div {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  width: 100%;
+  align-items: center;
+  gap: 45px;
 }
 
 .header-button {
-  width: 75px;
+  width: 80px;
   background: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-decoration: none;
+  text-align: center;
 }
 
 .header-button:visited {

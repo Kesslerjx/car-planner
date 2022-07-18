@@ -1,7 +1,6 @@
 .planner {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -13,4 +12,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.calculators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-end;
 }
