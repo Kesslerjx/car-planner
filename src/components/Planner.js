@@ -70,31 +70,6 @@ function Planner({ state, results, updateResult}) {
 
     return (
       <div className="planner">
-        <div className='planner-details'>
-            <p>
-                Use this site to help plan your next vehicle purchase. This page has a few different calculators for you to play around with. 
-                Once you've filled out the required information, you can head to the Vehicles page to view vehicles that meet the criteria provided by the calculators.
-            </p>
-            <h3>Max Payment</h3>
-            <p>
-                This will help you determine the money you will have left to spend on a car payment based on the other cost you provide it. 
-                Max Cost should be set to the max amount that you want to spend per month on vehicle related expenses.
-            </p>
-            <h3>Total Price</h3>
-            <p>
-                This will show you the total price of the vehicle after fees, taxes, etc, based on the payment that was calculated previously. 
-            </p>
-            <h3>Gross Price</h3>
-            <p>
-                This will show you the price of the vehicle before fees, taxes, etc, based on the total price was calculated previously.
-                This is the max price of a vehicle that you can afford / are willing to afford.
-            </p>
-            <h3>Required MPG</h3>
-            <p>
-                This will show you the MPG required to meet your gas cost based on the amount of miles you drive per month. This is important to consider
-                since gas cost will take up a large portion of your total cost.
-            </p>
-        </div>
         <div className='calculators'>
             <MaxPayment 
                 values={{

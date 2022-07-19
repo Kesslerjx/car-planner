@@ -5,6 +5,8 @@ function RequiredMPG({ values, result, inputChanged }) {
     return (
         <Calculator 
             title='Required MPG'
+            description='This will show you the MPG required to meet your gas cost based on the amount of miles you drive per month. This is important to consider
+            since gas cost will take up a large portion of your total cost.'
             inputs={[
                 <Input 
                     label='Gas Cost'

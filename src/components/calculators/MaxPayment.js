@@ -5,6 +5,9 @@ function MaxPayment({ values, result, inputChanged }) {
     return (
         <Calculator 
             title="Max Payment"
+            description='
+            This will help you determine the money you will have left to spend on a car payment based on the other cost you provide it. 
+            Max Cost should be set to the max amount that you want to spend per month on vehicle related expenses.'
             inputs={[
                 <Input
                     label='Max Cost'

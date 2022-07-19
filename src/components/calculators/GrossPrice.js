@@ -5,6 +5,8 @@ function GrossPrice({ values, result, inputChanged }) {
     return (
         <Calculator 
             title="Gross Price"
+            description='This will show you the price of the vehicle before fees, taxes, etc, based on the total price was calculated previously.
+            This is the max price of a vehicle that you can afford / are willing to afford.'
             inputs={[
                 <Input 
                     label='Loan Amount'

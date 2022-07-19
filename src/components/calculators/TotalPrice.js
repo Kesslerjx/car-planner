@@ -5,6 +5,7 @@ function TotalPrice({ values, result, inputChanged }) {
     return (
         <Calculator 
             title="Total Price"
+            description='This will show you the total price of the vehicle after fees, taxes, etc, based on the payment that was calculated previously.'
             inputs={[
                 <Input 
                     label='Max Payment'
