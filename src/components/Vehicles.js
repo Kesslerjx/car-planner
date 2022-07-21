@@ -1,36 +1,16 @@
 import { useEffect, useState } from "react";
-import { 
-  URLS,
-  getDataFrom
-}  from "../modules/vehicle-data";
+import Porsche from '../images/porsche.jpeg';
+import '../styles/Vehicles.css';
+
 
 function Vehicles() {
 
-  const [manufacturers, setManufacturers] = useState();
-  const [makes, setMakes]                 = useState();
-
-  const updateManufacturers = (manufacturers) => {
-    setManufacturers(
-      manufacturers
-        .filter(item  => item.Country === "UNITED STATES (USA)")
-        .filter(inUSA => inUSA.Mfr_CommonName !== null)
-    );
-    getDataFrom(URLS.ModelsForManufacturer(manufacturers[2].Mfr_CommonName), updateMakes);
-  }
-
-  const updateMakes = (makes) => {
-    setMakes(makes);
-  }
-
-  useEffect(()=> {
-    getDataFrom(URLS.Manufacturers, updateManufacturers);
-  }, [])
-
   return (
-    <div>
-      <p>Vehicles</p>
-      {console.log(manufacturers)}
-      {console.log(makes)}
+    <div className="vehicles">
+      <p>Nothing to see here yet, but look at these beautiful cars.</p>
+      <div className="placeholder-div">
+        <img src={Porsche} className='vehicles-placeholder-image'></img>
+      </div>
     </div>
   );
 }

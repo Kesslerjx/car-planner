@@ -1,0 +1,16 @@
+
+.vehicles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.placeholder-div {
+    max-width: 700px;
+}
+
+.vehicles-placeholder-image {
+    width: 100%;
+    object-fit: cover;
+}
