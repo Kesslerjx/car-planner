@@ -16,8 +16,7 @@
 
 .calculators {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
     justify-content: center;
-    align-items: flex-end;
 }
