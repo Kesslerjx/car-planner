@@ -4,7 +4,7 @@ import Input      from "../Input";
 function TotalPrice({ values, result, inputChanged }) {
     return (
         <Calculator 
-            title="Total Price"
+            title="Loan Amount"
             description='This will show you the total price of the vehicle after fees, taxes, etc, based on the payment that was calculated previously.'
             inputs={[
                 <Input 

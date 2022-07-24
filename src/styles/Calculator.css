@@ -17,7 +17,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: solid 1px;
+    outline: solid 2px var(--gray);
     border-radius: 8px;
     max-width: 700px;
 }
@@ -36,6 +36,7 @@
 
 .calculator > div div {
     flex: 1;
+    gap: 5px;
 }
 
 .calculator-title {
@@ -45,7 +46,7 @@
 }
 
 .calculator-description {
-    font-size: 0.9rem;
+    font-size: 1rem;
     min-width: 190px;
     margin-top: auto;
     margin-bottom: auto;
@@ -58,4 +59,9 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
+}
+
+.result-wrapper > p {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
